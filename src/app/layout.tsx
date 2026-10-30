@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { Bricolage_Grotesque, Figtree } from "next/font/google";=
+import { Bricolage_Grotesque, Figtree } from "next/font/google";
 import "./globals.css";
 import { Logomark } from "@/components/Logo";
 import { SiteHeader } from "@/components/SiteHeader";
