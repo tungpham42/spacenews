@@ -21,7 +21,7 @@ const QUICK_COUNT = 8;
 
 function pickQuick(sites: string[], active: string): string[] {
   const preferred = PREFERRED.map((name) =>
-    sites.find((s) => s.toLowerCase() === name.toLowerCase())
+    sites.find((s) => s.toLowerCase() === name.toLowerCase()),
   ).filter((s): s is string => Boolean(s));
   const rest = sites.filter((s) => !preferred.includes(s));
   let quick = [...preferred, ...rest].slice(0, QUICK_COUNT);

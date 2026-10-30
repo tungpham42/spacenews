@@ -35,7 +35,7 @@ function decodeEntities(input: string): string {
         }
       }
       return NAMED_ENTITIES[(name as string).toLowerCase()] ?? match;
-    }
+    },
   );
 }
 

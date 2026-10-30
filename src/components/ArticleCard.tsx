@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { formatDate } from "@/lib/api";
+import { formatDate } from "@/lib/format";
 import type { Article } from "@/lib/types";
 
 export function ArticleCard({ article }: { article: Article }) {

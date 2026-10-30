@@ -10,7 +10,8 @@ export function Masthead({
   sourceCount: number;
   newestAt?: string;
 }) {
-  const sources = sourceCount > 0 ? `${sourceCount} space news sites` : "space news sites";
+  const sources =
+    sourceCount > 0 ? `${sourceCount} space news sites` : "space news sites";
 
   return (
     <section className="relative isolate pb-10 pt-12 sm:pt-16">

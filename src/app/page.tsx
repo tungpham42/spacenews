@@ -4,11 +4,7 @@ import { Logomark } from "@/components/Logo";
 import { Masthead } from "@/components/Masthead";
 import { Pagination } from "@/components/Pagination";
 import { SourceFilter } from "@/components/SourceFilter";
-import {
-  FeatureStory,
-  HeroStory,
-  ListStory,
-} from "@/components/Stories";
+import { FeatureStory, HeroStory, ListStory } from "@/components/Stories";
 import { getArticles, getNewsSites, getTotalPages } from "@/lib/api";
 import { btnPrimary } from "@/lib/ui";
 
@@ -55,13 +51,7 @@ function ResultsHeading({
   );
 }
 
-function EmptyState({
-  q,
-  hasStories,
-}: {
-  q?: string;
-  hasStories: boolean;
-}) {
+function EmptyState({ q, hasStories }: { q?: string; hasStories: boolean }) {
   return (
     <div className="mx-auto max-w-md py-24 text-center">
       <Logomark className="mx-auto size-14 text-brand/50" />
