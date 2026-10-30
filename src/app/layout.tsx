@@ -1,10 +1,21 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import "@fontsource-variable/bricolage-grotesque";
-import "@fontsource-variable/figtree";
+import { Bricolage_Grotesque, Figtree } from "next/font/google";
 import "./globals.css";
 import { Logomark } from "@/components/Logo";
 import { SiteHeader } from "@/components/SiteHeader";
+
+const bicolageGrotesque = Bricolage_Grotesque({
+  subsets: ["latin", "latin-ext"],
+  display: "swap",
+  variable: "--font-bricolage-grotesque",
+});
+
+const figtree = Figtree({
+  subsets: ["latin", "latin-ext"],
+  display: "swap",
+  variable: "--font-figtree",
+});
 
 export const metadata: Metadata = {
   title: {
@@ -39,7 +50,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html suppressHydrationWarning lang="en">
+    <html
+      suppressHydrationWarning
+      lang="en"
+      className={`${bicolageGrotesque.variable} ${figtree.variable}`}
+    >
       <body suppressHydrationWarning className="flex min-h-dvh flex-col">
         {process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID && (
           <>

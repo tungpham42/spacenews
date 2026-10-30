@@ -39,10 +39,12 @@
   --color-on-brand: var(--on-brand);
   --color-brand-soft: var(--brand-soft);
   --color-sun: var(--sun);
+}
 
+@theme inline {
   --font-display:
-    "Bricolage Grotesque Variable", ui-sans-serif, system-ui, sans-serif;
-  --font-sans: "Figtree Variable", ui-sans-serif, system-ui, sans-serif;
+    var(--font-bricolage-grotesque), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-figtree), ui-sans-serif, system-ui, sans-serif;
 }
 
 @layer base {
