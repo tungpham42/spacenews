@@ -1,0 +1,115 @@
+@import "tailwindcss";
+
+/* Daylight mission-control palette: cool paper, deep ink, ultramarine, a single sun-yellow signal. */
+:root {
+  color-scheme: light;
+  --paper: #f1f4fb;
+  --surface: #ffffff;
+  --ink: #0d1330;
+  --muted: #566082;
+  --line: #d9e0f1;
+  --brand: #2b3ff0;
+  --on-brand: #ffffff;
+  --brand-soft: #e1e5ff;
+  --sun: #ffc83d;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --paper: #090d1f;
+    --surface: #131a36;
+    --ink: #eef1ff;
+    --muted: #9ba5cc;
+    --line: #252e56;
+    --brand: #8b98ff;
+    --on-brand: #090d1f;
+    --brand-soft: #1b2450;
+    --sun: #ffc83d;
+  }
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-brand: var(--brand);
+  --color-on-brand: var(--on-brand);
+  --color-brand-soft: var(--brand-soft);
+  --color-sun: var(--sun);
+
+  --font-display:
+    "Bricolage Grotesque Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Figtree Variable", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    background: var(--paper);
+    scroll-padding-top: 6rem;
+  }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--brand);
+    outline-offset: 3px;
+    border-radius: 0.5rem;
+  }
+
+  ::selection {
+    background: var(--sun);
+    color: #0d1330;
+  }
+}
+
+/* The one orchestrated moment: the orbit arc draws itself, then the dot lands. */
+.orbit-arc {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: orbit-draw 1.8s cubic-bezier(0.25, 0.6, 0.25, 1) 0.15s forwards;
+}
+
+.orbit-dot {
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: orbit-land 0.55s cubic-bezier(0.3, 1.6, 0.5, 1) 1.7s forwards;
+}
+
+@keyframes orbit-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes orbit-land {
+  from {
+    opacity: 0;
+    transform: scale(0.2);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .orbit-arc {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+  .orbit-dot {
+    animation: none;
+    opacity: 1;
+  }
+}
