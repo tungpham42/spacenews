@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { Bricolage_Grotesque, Figtree } from "next/font/google";
-// @ts-expect-error CSS imports are handled by Next.js.
+import { Bricolage_Grotesque, Figtree } from "next/font/google";=
 import "./globals.css";
 import { Logomark } from "@/components/Logo";
 import { SiteHeader } from "@/components/SiteHeader";
